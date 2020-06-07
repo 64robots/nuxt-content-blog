@@ -2,7 +2,7 @@
 
 > Create blog posts from the command line and get them up and running automaticly.
 
-![](http://g.recordit.co/ZGFI0jZSoG.gif)
+![ZGFI0jZSoG](https://user-images.githubusercontent.com/12644599/83972698-f33a1780-a8e1-11ea-9833-ecb5d89b8ff4.gif)
 
 
 ## Folder Structure
