@@ -5,7 +5,7 @@
       :key="post.path"
       class="flex flex-col rounded-lg shadow-lg overflow-hidden"
     >
-      <nuxt-link :to="post.permalink" class="flex-shrink-0">
+      <nuxt-link :to="`/${post.permalink}`" class="flex-shrink-0">
         <img class="h-48 w-full object-cover" :src="post.image" alt="" />
       </nuxt-link>
       <article class="flex-1 bg-white p-6 flex flex-col justify-between">
@@ -15,7 +15,7 @@
               <CategoryName :category="post.category" />
             </nuxt-link>
           </p>
-          <nuxt-link :to="post.permalink" class="block">
+          <nuxt-link :to="`/${post.permalink}`" class="block">
             <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
               {{ post.title }}
             </h3>
