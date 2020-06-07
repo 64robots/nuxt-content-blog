@@ -47,6 +47,20 @@ export default {
    ** Nuxt.js modules
    */
   modules: ['@nuxt/content', '@nuxt/components'],
+  generate: {
+    async routes() {
+      const { $content } = require('@nuxt/content')
+      const posts = await $content('category', { deep: true })
+        .only(['slug'])
+        .fetch()
+
+      const categories = await $content('categories')
+        .only(['slug'])
+        .fetch()
+
+      return [...posts.map(p => `/${p.slug}`), ...categories.map(c => `/category/${c.slug}`)]
+    },
+  },
   hooks: {
     'content:file:beforeInsert': document => {
       if (document.extension === '.md') {
