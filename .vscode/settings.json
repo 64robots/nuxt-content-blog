@@ -1,0 +1,21 @@
+{
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "vetur.validation.template": false,
+    "eslint.probe": ["javascript", "javascriptreact", "vue", "vue-html", "html"],
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    },
+
+    // ===
+    // Spacing
+    // ===
+
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.trimAutoWhitespace": true,
+    "files.trimTrailingWhitespace": true,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true
+  }
