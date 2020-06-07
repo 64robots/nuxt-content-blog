@@ -2,7 +2,7 @@
 
 > Create blog posts from the command line and get them up and running automaticly.
 
-![mKZhFf0UuD](https://user-images.githubusercontent.com/12644599/83974062-c9d1b980-a8ea-11ea-838d-d47f6f249a1e.gif)
+![68igUm066A](https://user-images.githubusercontent.com/12644599/83974499-f0ddba80-a8ed-11ea-996b-7374f26f2b4f.gif)
 
 
 ## Folder Structure
