@@ -46,7 +46,7 @@ export default {
     const meta = [
       { hid: 'twitter:title', name: 'twitter:title', content: this.post.title },
       { hid: 'og:title', name: 'og:title', content: this.post.title },
-      { hid: 'twitter:card', name: 'twitter:card', content: this.post.description },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'og:type', name: 'og:type', content: 'article' },
       {
         hid: 'article:published_time',
