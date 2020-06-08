@@ -7,7 +7,7 @@ export default {
   async fetch() {
     const { $content, params, redirect } = this.$nuxt.context
 
-    const posts = await $content('category', { deep: true })
+    const posts = await $content('posts', { deep: true })
       .where({ permalink: params.permalink })
       .fetch()
     const post = posts[0]
@@ -82,6 +82,7 @@ export default {
   render() {
     return this.$scopedSlots.default({
       post: this.post,
+      author: this.author,
     })
   },
 }

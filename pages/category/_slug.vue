@@ -12,7 +12,7 @@
 export default {
   async asyncData({ $content, params }) {
     const categorySlug = params.slug
-    const posts = await $content('category', categorySlug).fetch()
+    const posts = await $content('posts', categorySlug).fetch()
 
     return {
       posts,

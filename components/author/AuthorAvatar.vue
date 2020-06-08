@@ -1,6 +1,6 @@
 <template>
-  <a v-if="authorObj.avatar" href="#">
-    <img class="h-10 w-10 rounded-full" :src="authorObj.avatar" alt="" />
+  <a v-if="author.avatar" href="#">
+    <img class="h-10 w-10 rounded-full" :src="author.avatar" alt="" />
   </a>
   <div
     v-else
@@ -12,15 +12,13 @@
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   name: 'AuthorName',
 
   props: {
     author: {
-      type: String,
-      default: '',
+      type: Object,
+      default: () => ({}),
     },
   },
 
@@ -46,18 +44,13 @@ export default {
   },
 
   computed: {
-    ...mapState(['authors']),
-
-    authorObj() {
-      return this.authors.find(author => author.slug === this.author) || {}
-    },
-
     nameInitials() {
-      if (!this.authorObj.name) {
+      console.log('computed', this.author)
+      if (!this.author.name) {
         return ''
       }
 
-      const [name, surname] = this.authorObj.name.split(' ')
+      const [name, surname] = this.author.name.split(' ')
       return `${name.substring(0, 1)}${surname.substring(0, 1)}`
     },
 

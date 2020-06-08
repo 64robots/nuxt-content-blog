@@ -1,12 +1,12 @@
 <template>
   <article>
-    <Post v-slot="{ post }">
+    <Post v-slot="{ post, author }">
       <div>
         <div class="flex">
           <div class="flex-1 flex flex-col items-end p-8">
             <h1 class="my-8">{{ post.title }}</h1>
 
-            <ArticleFooter :post="post" />
+            <ArticleFooter :post="post" :author="author" />
           </div>
           <img class="flex-1 h-64 w-1/2 object-cover" :src="post.image" alt="" />
         </div>

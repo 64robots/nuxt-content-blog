@@ -1,12 +1,12 @@
 <template>
   <div class="mt-6 flex items-center">
     <div class="flex-shrink-0">
-      <AuthorAvatar :author="post.author" />
+      <AuthorAvatar :author="author" />
     </div>
     <div class="ml-3">
       <p class="text-sm leading-5 font-medium text-gray-900">
         <a href="#" class="hover:underline">
-          <AuthorName :author="post.author" />
+          <span>{{ author.name }}</span>
         </a>
       </p>
       <div class="flex text-sm leading-5 text-gray-500">
@@ -37,18 +37,10 @@ export default {
       required: true,
       default: () => ({}),
     },
-  },
-
-  async fetch() {
-    if (this.post.author) {
-      this.author = await this.$content('authors', this.post.author).fetch()
-    }
-  },
-
-  data() {
-    return {
-      author: {},
-    }
+    author: {
+      type: Object,
+      default: () => ({}),
+    },
   },
 
   computed: {
