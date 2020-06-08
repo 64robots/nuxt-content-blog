@@ -6,7 +6,7 @@
     <article class="flex-1 bg-white p-6 flex flex-col justify-between">
       <div class="flex-1">
         <p class="text-sm leading-5 font-medium text-indigo-600">
-          <nuxt-link :to="post.dir" class="hover:underline">
+          <nuxt-link :to="`/category/${post.category}`" class="hover:underline">
             <CategoryName :category="post.category" />
           </nuxt-link>
         </p>
