@@ -17,6 +17,8 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
+
 export default {
   name: 'ViewPost',
 
@@ -32,11 +34,20 @@ export default {
     }
   },
 
+  computed: {
+    ...mapState(['authors']),
+
+    author() {
+      return this.authors.find(author => author.slug === this.post.author) || {}
+    },
+  },
+
   head() {
     const meta = [
       { hid: 'twitter:title', name: 'twitter:title', content: this.post.title },
       { hid: 'og:title', name: 'og:title', content: this.post.title },
       { hid: 'twitter:card', name: 'twitter:card', content: this.post.description },
+      { hid: 'twitter:creator', name: 'twitter:creator', content: this.author.twitter },
       { hid: 'og:type', name: 'og:type', content: 'article' },
       { hid: 'article:author', name: 'article:author', content: this.post.author },
       {
@@ -57,7 +68,7 @@ export default {
     }
 
     if (this.post.image) {
-      meta.push({ hid: 'twitter:image:src', name: 'twitter:site', content: this.post.image })
+      meta.push({ hid: 'twitter:image:src', name: 'twitter:image:src', content: this.post.image })
       meta.push({ hid: 'og:image', name: 'og:image', content: this.post.image })
     }
 
