@@ -47,9 +47,7 @@ export default {
       { hid: 'twitter:title', name: 'twitter:title', content: this.post.title },
       { hid: 'og:title', name: 'og:title', content: this.post.title },
       { hid: 'twitter:card', name: 'twitter:card', content: this.post.description },
-      { hid: 'twitter:creator', name: 'twitter:creator', content: this.author.twitter },
       { hid: 'og:type', name: 'og:type', content: 'article' },
-      { hid: 'article:author', name: 'article:author', content: this.post.author },
       {
         hid: 'article:published_time',
         name: 'article:published_time',
@@ -70,6 +68,14 @@ export default {
     if (this.post.image) {
       meta.push({ hid: 'twitter:image:src', name: 'twitter:image:src', content: this.post.image })
       meta.push({ hid: 'og:image', name: 'og:image', content: this.post.image })
+    }
+
+    if (this.author.twitter) {
+      meta.push({ hid: 'twitter:creator', name: 'twitter:creator', content: this.author.twitter })
+    }
+
+    if (this.author.name) {
+      meta.push({ hid: 'article:author', name: 'article:author', content: this.author.name })
     }
 
     return {
