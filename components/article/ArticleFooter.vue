@@ -35,7 +35,14 @@ export default {
     post: {
       type: Object,
       required: true,
+      default: () => ({}),
     },
+  },
+
+  async fetch() {
+    if (this.post.author) {
+      this.author = await this.$content('authors', this.post.author).fetch()
+    }
   },
 
   data() {
@@ -46,16 +53,16 @@ export default {
 
   computed: {
     date() {
+      if (!this.post.createdAt) {
+        return ''
+      }
+
       const date =
         typeof this.post.createdAt === 'string'
           ? parseISO(this.post.createdAt)
           : this.post.createdAt
       return format(date, 'MMM dd, yyyy')
     },
-  },
-
-  async created() {
-    this.author = await this.$content('authors', this.post.author).fetch()
   },
 }
 </script>

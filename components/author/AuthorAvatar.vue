@@ -53,6 +53,10 @@ export default {
     },
 
     nameInitials() {
+      if (!this.authorObj.name) {
+        return ''
+      }
+
       const [name, surname] = this.authorObj.name.split(' ')
       return `${name.substring(0, 1)}${surname.substring(0, 1)}`
     },
