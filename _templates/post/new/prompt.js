@@ -68,7 +68,7 @@ module.exports = {
           },
         ])
         .then(({ title, description, category, author, image }) => {
-          const permalink = `category/${category}/${slugify(title)}`
+          const permalink = slugify(title)
           resolve({
             title,
             description,
