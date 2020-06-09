@@ -4,21 +4,31 @@
       <div v-if="error.code">
         No post found
       </div>
-      <div v-else>
-        <div class="flex">
-          <div class="flex-1 flex flex-col items-end p-8">
-            <h1 class="my-8">{{ post.title }}</h1>
-
-            <ArticleFooter :post="post" :author="author" />
-          </div>
-          <img class="flex-1 h-64 w-1/2 object-cover" :src="post.image" alt="" />
+      <article v-else class="max-w-4xl w-full mx-auto">
+        <div class="relative">
+          <img class="flex-1 h-64 w-full object-cover" :src="post.image" :alt="post.title" />
+          <AuthorAvatar
+            :author="author"
+            class="absolute"
+            :style="{ bottom: '1rem', right: '1.8rem' }"
+          />
         </div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="max-w-4xl mx-auto mt-16">
+
+        <div class="mt-8">
+          <h1 class="mt-2 text-4xl font-medium leading-7">{{ post.title }}</h1>
+          <div class="mt-1">
+            <span class="text-sm font-medium text-gray-700">{{ post.readingTime }}</span>
+            <span>|</span>
+            <time class="text-sm font-medium text-gray-700" :datetime="post.createdAt">
+              {{ post.createdAt }}
+            </time>
+          </div>
+
+          <div class="mt-6 content">
             <nuxt-content :document="post" />
           </div>
         </div>
-      </div>
+      </article>
     </Post>
   </article>
 </template>
@@ -29,7 +39,9 @@ export default {
 }
 </script>
 <style scoped lang="postcss">
-h1 {
-  @apply text-4xl font-bold;
+.content {
+  h1 {
+    @apply text-4xl font-bold;
+  }
 }
 </style>

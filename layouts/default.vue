@@ -15,7 +15,7 @@
 
     <main class="bg-white">
       <div class="container mx-auto">
-        <nuxt class="mt-6" />
+        <nuxt class="mt-4" />
       </div>
     </main>
   </div>
