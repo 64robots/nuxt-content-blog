@@ -12,7 +12,7 @@
       <!-- IMAGE -->
 
       <!-- TITLE AND USER -->
-      <div class="bg-gray-900 rounded-b-md text-white font-sans px-6 py-3 flex justify-between">
+      <div class="bg-gray-900 md:rounded-b-md text-white font-sans px-6 py-3 flex justify-between">
         <div class="flex flex-col">
           <nuxt-link :to="`/${post.permalink}`">
             <h3 class="text-2xl leading-5 font-semibold text-white">
