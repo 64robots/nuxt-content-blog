@@ -1,17 +1,15 @@
 <template>
-  <div class="relative bg-gray-50 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
-    <PostList v-slot="{ posts, error }" :category="$route.params.slug">
-      <div v-if="error.code">
-        No posts to display
+  <PostList v-slot="{ posts, error }" :category="$route.params.slug">
+    <div v-if="error.code">
+      No posts to display
+    </div>
+    <div v-else>
+      <div class="text-4xl font-bold">{{ $route.params.slug }}</div>
+      <div class="grid gap-12 lg:grid-cols-2 mt-8" syle="grid-auto-rows: 1fr;">
+        <ArticleListItem v-for="post in posts" :key="post.path" :post="post" />
       </div>
-      <div v-else>
-        <CategoryName :category="$route.params.slug" class="text-4xl font-bold" />
-        <div class="relative max-w-7xl mx-auto">
-          <DisplayPosts :posts="posts" />
-        </div>
-      </div>
-    </PostList>
-  </div>
+    </div>
+  </PostList>
 </template>
 
 <script>

@@ -14,11 +14,16 @@
       <!-- TITLE AND USER -->
       <div class="bg-gray-900 md:rounded-b-md text-white font-sans px-6 py-3 flex justify-between">
         <div class="flex flex-col">
-          <nuxt-link :to="`/${post.permalink}`">
-            <h3 class="text-2xl leading-5 font-semibold text-white">
-              {{ post.title }}
-            </h3>
-          </nuxt-link>
+          <div class="flex">
+            <nuxt-link :to="`/${post.permalink}`">
+              <h3 class="text-2xl leading-5 font-semibold text-white">
+                {{ post.title }}
+              </h3>
+            </nuxt-link>
+            <div class="ml-4 -mt-1 text-xs border border-gray-800 py-1 px-3 rounded-lg">
+              <nuxt-link :to="`/category/${post.category}`">{{ post.category }}</nuxt-link>
+            </div>
+          </div>
           <div class="mt-1">
             <span class="text-sm font-medium text-gray-100">{{ post.readingTime }}</span>
             <span>|</span>
