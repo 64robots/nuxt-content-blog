@@ -40,20 +40,20 @@ export default {
 </script>
 <style scoped lang="postcss">
 .nuxt-content {
-  /* & h1 {
-    @apply text-4xl font-bold;
+  & h1 {
+    @apply text-4xl font-bold leading-7 mb-2;
   }
 
   & h2 {
-    @apply text-3xl font-bold;
+    @apply text-3xl font-bold leading-6 mb-2;
   }
 
   & h3 {
-    @apply text-2xl font-semibold;
+    @apply text-2xl font-semibold leading-5 mb-1;
   }
 
   & h4 {
-    @apply text-xl font-semibold;
+    @apply text-xl font-semibold leading-5 mb-1;
   }
 
   & h5 {
@@ -70,7 +70,7 @@ export default {
 
   & del {
     @apply line-through;
-  } */
+  }
   @apply text-lg text-gray-900 leading-normal;
   & > * + *,
   & li + li,
@@ -85,12 +85,6 @@ export default {
   }
   & strong a {
     @apply font-bold;
-  }
-  & h2 {
-    @apply leading-tight text-xl font-bold text-black mb-2 mt-10;
-  }
-  & h3 {
-    @apply leading-tight text-lg font-bold text-black mt-8 -mb-2;
   }
   & p > code {
     @apply font-mono text-sm inline bg-gray-200 px-2 py-1;
