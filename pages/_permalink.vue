@@ -1,7 +1,10 @@
 <template>
   <article>
-    <Post v-slot="{ post, author }">
-      <div>
+    <Post v-slot="{ post, author, notFound }">
+      <div v-if="notFound">
+        No post found
+      </div>
+      <div v-else>
         <div class="flex">
           <div class="flex-1 flex flex-col items-end p-8">
             <h1 class="my-8">{{ post.title }}</h1>

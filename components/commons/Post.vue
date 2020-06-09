@@ -5,7 +5,7 @@ export default {
   name: 'Post',
 
   async fetch() {
-    const { $content, params, redirect } = this.$nuxt.context
+    const { $content, params } = this.$nuxt.context
 
     const posts = await $content('posts', { deep: true })
       .where({ permalink: params.permalink })
@@ -13,10 +13,10 @@ export default {
     const post = posts[0]
 
     if (!post) {
-      redirect('/')
+      this.notFound = true
     }
 
-    this.post = post
+    this.post = post || {}
   },
 
   data() {
@@ -83,6 +83,7 @@ export default {
     return this.$scopedSlots.default({
       post: this.post,
       author: this.author,
+      notFound: this.notFound,
     })
   },
 }

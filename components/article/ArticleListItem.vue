@@ -19,13 +19,11 @@
           </p>
         </nuxt-link>
       </div>
-      <ArticleFooter :post="post" :author="author" />
+      <ArticleFooter :post="post" :author="post.author" />
     </article>
   </div>
 </template>
 <script>
-import { mapState } from 'vuex'
-
 export default {
   name: 'ArticleListItem',
 
@@ -33,18 +31,6 @@ export default {
     post: {
       type: Object,
       default: () => ({}),
-    },
-  },
-
-  data() {
-    return {}
-  },
-
-  computed: {
-    ...mapState(['authors']),
-
-    author() {
-      return this.authors.find(author => author.slug === this.post.author) || {}
     },
   },
 }

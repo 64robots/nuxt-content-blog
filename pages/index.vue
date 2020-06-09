@@ -1,9 +1,9 @@
 <template>
   <div class="relative bg-gray-50 pt-8 pb-20 px-4 sm:px-6 lg:pb-28 lg:px-8">
     <div class="relative max-w-7xl mx-auto">
-      <Posts v-slot="{ posts }">
+      <PostList v-slot="{ posts }">
         <DisplayPosts :posts="posts" />
-      </Posts>
+      </PostList>
     </div>
   </div>
 </template>
