@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+  <div class="grid gap-12 lg:grid-cols-2" syle="grid-auto-rows: 1fr;">
     <ArticleListItem v-for="post in posts" :key="post.path" :post="post" />
   </div>
 </template>

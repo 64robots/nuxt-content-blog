@@ -1,18 +1,23 @@
 <template>
-  <div class="pb-16">
-    <div class="p-8 bg-gray-200 shadow-lg">
-      <div class="mt-2 md:flex md:items-center md:justify-between">
-        <div class="flex-1 min-w-0">
-          <h2
-            class="text-2xl font-bold leading-7 text-gray-700 sm:text-3xl sm:leading-9 sm:truncate cursor-pointer"
-            @click="$router.push('/')"
+  <div class="pb-6">
+    <div class="bg-white py-4">
+      <div class="container mx-auto border-b border-black pb-2">
+        <nuxt-link :to="{ name: 'index' }">
+          <h1
+            class="text-2xl font-semibold leading-6 transition ease-in-out duration-300 hover:bg-blue-100 py-2 pl-1 pr-5 inline-block"
           >
-            My Awesome Blog
-          </h2>
-        </div>
+            ✍️ Awesome Blog
+          </h1>
+        </nuxt-link>
+        <h2 class="text-xs text-gray-700 pl-1">The awesome description of my awesome blog</h2>
       </div>
     </div>
-    <nuxt class="mt-16" />
+
+    <main class="bg-white">
+      <div class="container mx-auto">
+        <nuxt class="mt-6" />
+      </div>
+    </main>
   </div>
 </template>
 <style>
