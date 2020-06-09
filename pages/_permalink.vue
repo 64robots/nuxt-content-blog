@@ -1,7 +1,7 @@
 <template>
   <article>
-    <Post v-slot="{ post, author, notFound }">
-      <div v-if="notFound">
+    <Post v-slot="{ post, author, error }" :permalink="$route.params.permalink">
+      <div v-if="error.code">
         No post found
       </div>
       <div v-else>

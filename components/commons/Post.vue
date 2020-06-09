@@ -4,16 +4,31 @@ import { mapState } from 'vuex'
 export default {
   name: 'Post',
 
+  props: {
+    permalink: {
+      type: String,
+      default: '',
+    },
+    redirect: {
+      type: String,
+      default: null,
+    },
+  },
+
   async fetch() {
-    const { $content, params } = this.$nuxt.context
+    const { $content, redirect } = this.$nuxt.context
 
     const posts = await $content('posts', { deep: true })
-      .where({ permalink: params.permalink })
+      .where({ permalink: this.permalink })
       .fetch()
-    const post = posts[0]
+    const [post] = posts
 
     if (!post) {
-      this.notFound = true
+      if (this.redirect) {
+        redirect(this.redirect)
+      }
+      this.error.message = 'Content not found'
+      this.error.code = 'not_found'
     }
 
     this.post = post || {}
@@ -22,6 +37,10 @@ export default {
   data() {
     return {
       post: {},
+      error: {
+        message: '',
+        code: false,
+      },
     }
   },
 
@@ -83,7 +102,7 @@ export default {
     return this.$scopedSlots.default({
       post: this.post,
       author: this.author,
-      notFound: this.notFound,
+      error: this.error,
     })
   },
 }

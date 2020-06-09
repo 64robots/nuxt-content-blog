@@ -45,7 +45,6 @@ export default {
 
   computed: {
     nameInitials() {
-      console.log('computed', this.author)
       if (!this.author.name) {
         return ''
       }

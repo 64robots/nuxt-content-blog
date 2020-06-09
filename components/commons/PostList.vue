@@ -25,14 +25,18 @@ export default {
         return p
       })
     } catch (error) {
-      this.notFound = true
+      this.error.message = 'Content not found'
+      this.error.code = 'not_found'
     }
   },
 
   data() {
     return {
       posts: [],
-      notFound: false,
+      error: {
+        message: '',
+        code: false,
+      },
     }
   },
 
@@ -47,7 +51,7 @@ export default {
   render() {
     return this.$scopedSlots.default({
       posts: this.posts,
-      notFound: this.notFound,
+      error: this.error,
     })
   },
 }
