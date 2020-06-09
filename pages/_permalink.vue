@@ -24,7 +24,7 @@
             </time>
           </div>
 
-          <div class="mt-6 content">
+          <div class="mt-6">
             <nuxt-content :document="post" />
           </div>
         </div>
@@ -39,9 +39,71 @@ export default {
 }
 </script>
 <style scoped lang="postcss">
-.content {
-  h1 {
+.nuxt-content {
+  /* & h1 {
     @apply text-4xl font-bold;
+  }
+
+  & h2 {
+    @apply text-3xl font-bold;
+  }
+
+  & h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  & h4 {
+    @apply text-xl font-semibold;
+  }
+
+  & h5 {
+    @apply text-lg font-semibold;
+  }
+
+  & strong {
+    @apply font-bold;
+  }
+
+  & em {
+    @apply italic;
+  }
+
+  & del {
+    @apply line-through;
+  } */
+  @apply text-lg text-gray-900 leading-normal;
+  & > * + *,
+  & li + li,
+  & li > p + p {
+    @apply mt-6;
+  }
+  & strong {
+    @apply text-black font-bold;
+  }
+  & a {
+    @apply text-black font-semibold;
+  }
+  & strong a {
+    @apply font-bold;
+  }
+  & h2 {
+    @apply leading-tight text-xl font-bold text-black mb-2 mt-10;
+  }
+  & h3 {
+    @apply leading-tight text-lg font-bold text-black mt-8 -mb-2;
+  }
+  & p > code {
+    @apply font-mono text-sm inline bg-gray-200 px-2 py-1;
+  }
+  & blockquote {
+    @apply border-l-4 border-gray-200 pl-4 italic;
+  }
+  & ul,
+  & ol {
+    @apply pl-5;
+    @screen sm {
+      @apply pl-10;
+    }
   }
 }
 </style>
