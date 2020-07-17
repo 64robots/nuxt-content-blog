@@ -54,7 +54,9 @@ category: remote-work
 There are two renderless components ready to be used
 
 ### PostList
+
 The `PostList` component is used to render a collection of posts. By default it renders the collection `posts` collection but you can specify your own by the `collection`prop.
+
 ```javascript
 <PostList v-slot="{ posts }">
   <DisplayPosts :posts="posts" />
@@ -78,8 +80,10 @@ You will use the posts slot containing all the matched posts.
 ```
 
 ### Post
+
 The `Post` component render a given post by using the `permalink` prop. Note that it also has the `redirect` and `error` prop.
 The `post` and `author` slots are available to render the matched content
+
 ```
 <Post v-slot="{ post, author }" :permalink="$route.params.permalink" redirect="/">
     <PostContent :post="post" :author="author" />
