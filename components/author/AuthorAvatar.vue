@@ -1,26 +1,24 @@
 <template>
-  <a v-if="authorObj.avatar" href="#">
-    <img class="h-10 w-10 rounded-full" :src="authorObj.avatar" alt="" />
-  </a>
+  <div v-if="author.avatar">
+    <img class="h-10 w-10 rounded-full border-2 border-white" :src="author.avatar" alt="" />
+  </div>
   <div
     v-else
     :style="{ backgroundColor: background }"
-    class="h-10 w-10 rounded-full flex items-center justify-center"
+    class="h-10 w-10 rounded-full flex items-center justify-center border-2 border-white"
   >
     <span class="text-white font-bold uppercase">{{ nameInitials }}</span>
   </div>
 </template>
 
 <script>
-import { mapState } from 'vuex'
-
 export default {
   name: 'AuthorName',
 
   props: {
     author: {
-      type: String,
-      default: '',
+      type: Object,
+      default: () => ({}),
     },
   },
 
@@ -46,14 +44,12 @@ export default {
   },
 
   computed: {
-    ...mapState(['authors']),
-
-    authorObj() {
-      return this.authors.find(author => author.slug === this.author) || {}
-    },
-
     nameInitials() {
-      const [name, surname] = this.authorObj.name.split(' ')
+      if (!this.author.name) {
+        return ''
+      }
+
+      const [name, surname] = this.author.name.split(' ')
       return `${name.substring(0, 1)}${surname.substring(0, 1)}`
     },
 

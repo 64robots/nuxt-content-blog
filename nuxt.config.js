@@ -50,7 +50,7 @@ export default {
   generate: {
     async routes() {
       const { $content } = require('@nuxt/content')
-      const posts = await $content('category', { deep: true })
+      const posts = await $content('posts', { deep: true })
         .only(['slug'])
         .fetch()
 
