@@ -13,11 +13,16 @@ export default {
       type: String,
       default: 'posts',
     },
+    redirect: {
+      type: String,
+      default: null,
+    },
   },
 
   async fetch() {
+    const { $content, redirect } = this.$nuxt.context
+
     try {
-      const { $content } = this.$nuxt.context
       const path = this.category ? `${this.collection}/${this.category}` : this.collection
       const posts = await $content(path, { deep: this.fetchFilesFromSubdirectories }).fetch()
       this.posts = posts.map(p => {
@@ -25,6 +30,9 @@ export default {
         return p
       })
     } catch (error) {
+      if (this.redirect) {
+        redirect(this.redirect)
+      }
       this.error.message = 'Content not found'
       this.error.code = 'not_found'
     }

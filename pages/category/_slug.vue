@@ -5,7 +5,7 @@
     </div>
     <div v-else>
       <div class="text-4xl font-bold">{{ $route.params.slug }}</div>
-      <div class="grid gap-12 lg:grid-cols-2 mt-8" syle="grid-auto-rows: 1fr;">
+      <div class="grid gap-12 lg:grid-cols-2 mt-8">
         <ArticleListItem v-for="post in posts" :key="post.path" :post="post" />
       </div>
     </div>
