@@ -1,7 +1,10 @@
 <template>
-  <div v-if="author.avatar">
-    <img class="h-10 w-10 rounded-full border-2 border-white" :src="author.avatar" alt="" />
-  </div>
+  <img
+    v-if="author.avatar"
+    class="h-10 w-10 rounded-full border-2 border-white flex-no-wrap"
+    :src="author.avatar"
+    alt=""
+  />
   <div
     v-else
     :style="{ backgroundColor: background }"

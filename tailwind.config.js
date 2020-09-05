@@ -8,4 +8,8 @@ module.exports = {
   theme: {},
   variants: {},
   plugins: [require('@tailwindcss/typography')],
+  future: {
+    removeDeprecatedGapUtilities: true,
+    purgeLayersByDefault: true,
+  },
 }
