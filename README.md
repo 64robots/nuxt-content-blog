@@ -1,6 +1,6 @@
 # Blog Scaffolding using Nuxt and @nuxt/content
 
-> Create blog posts from the command line and get them up and running automaticly.
+> Create blog posts from the command line and get them up and running automatically.
 
 ![68igUm066A](https://user-images.githubusercontent.com/12644599/83974499-f0ddba80-a8ed-11ea-996b-7374f26f2b4f.gif)
 
@@ -46,7 +46,7 @@ category: remote-work
 
 # You can write markdown here
 
-[Take a look to Nuxt contenct documentation!](https://content.nuxtjs.org/writing)
+[Take a look to Nuxt content documentation!](https://content.nuxtjs.org/writing)
 
 ```
 
@@ -92,7 +92,7 @@ The `post` and `author` slots are available to render the matched content
 
 ## Command-line tools
 
-You can use these convinient helpers for creating Authors, Categories and Posts:
+You can use these convenient helpers for creating Authors, Categories and Posts:
 
 - yarn new:author
 - yarn new:category
