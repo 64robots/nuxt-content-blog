@@ -84,7 +84,7 @@ You will use the posts slot containing all the matched posts.
 The `Post` component render a given post by using the `permalink` prop. Note that it also has the `redirect` and `error` prop.
 The `post` and `author` slots are available to render the matched content
 
-```
+```vue
 <Post v-slot="{ post, author }" :permalink="$route.params.permalink" redirect="/">
     <PostContent :post="post" :author="author" />
 </Post>
