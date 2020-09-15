@@ -1,6 +1,6 @@
 ---
-title: Quick start
-description: ''
+title: 'Quick start'
+description: 'Create your own @nuxt/content blog in seconds!'
 position: 1
 category: 'Getting started'
 ---

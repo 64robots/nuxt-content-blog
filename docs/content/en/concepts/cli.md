@@ -1,6 +1,6 @@
 ---
-title: Command-line tools
-description: ''
+title: 'Command-line tools'
+description: 'Create your own @nuxt/content blog in seconds!'
 position: 3
 category: 'Configuration'
 ---

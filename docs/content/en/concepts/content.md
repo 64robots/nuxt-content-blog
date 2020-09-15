@@ -1,6 +1,6 @@
 ---
-title: Content
-description: ''
+title: 'Content'
+description: 'Create your own @nuxt/content blog in seconds!'
 position: 1
 category: 'Configuration'
 ---

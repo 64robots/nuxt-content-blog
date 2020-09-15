@@ -1,6 +1,6 @@
 ---
-title: Manual Installation
-description: ''
+title: 'Manual Installation'
+description: 'Create your own @nuxt/content blog in seconds!'
 position: 2
 category: 'Getting started'
 ---
