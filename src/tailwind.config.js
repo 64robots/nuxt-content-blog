@@ -4,6 +4,9 @@
  ** Docs: https://tailwindcss.com/docs/configuration
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
+
+const path = require("path");
+
 module.exports = {
   theme: {},
   variants: {},
