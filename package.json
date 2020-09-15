@@ -1,0 +1,28 @@
+{
+  "name": "@64robots/nuxt-content-blog",
+  "version": "0.2.0",
+  "license": "MIT",
+  "files": [
+    "src"
+  ],
+  "main": "src/",
+  "dependencies": {
+    "@nuxt/content": "^1.8.1",
+    "@nuxt/types": "^2.14.4",
+    "@nuxtjs/tailwindcss": "^3.0.2",
+    "@tailwindcss/typography": "^0.2.0",
+    "defu": "^3.1.0",
+    "hygen": "^5.0.3",
+    "nuxt-i18n": "^6.13.12",
+    "reading-time": "^1.2.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.1",
+    "eslint": "^6.1.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-nuxt": ">=0.4.2",
+    "eslint-plugin-prettier": "^3.1.2",
+    "nuxt": "^2.14.4"
+  },
+  "types": "./src/index.d.ts"
+}
