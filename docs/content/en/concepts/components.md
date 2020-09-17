@@ -32,6 +32,12 @@ You will use the posts slot containing all the matched posts.
 </PostList>
 ```
 
+| prop       | type   | default |   |   |
+|------------|--------|---------|---|---|
+| category   | String | null    |   |   |
+| collection | String | posts   |   |   |
+| redirect   | String | null    |   |   |
+
 ### Post
 
 The `Post` component render a given post by using the `permalink` prop. Note that it also has the `redirect` and `error` prop.
@@ -42,3 +48,8 @@ The `post` and `author` slots are available to render the matched content
     <PostContent :post="post" :author="author" />
 </Post>
 ```
+
+| prop       | type   | default |   |   |
+|------------|--------|---------|---|---|
+| permalink  | String | ''      |   |   |
+| redirect   | String | null    |   |   |
