@@ -1,7 +1,7 @@
 ---
 title: 'Command-line tools'
 description: 'Create your own @nuxt/content blog in seconds!'
-position: 3
+position: 5
 category: 'Configuration'
 ---
 You can use these convenient helpers for creating Authors, Categories and Posts:

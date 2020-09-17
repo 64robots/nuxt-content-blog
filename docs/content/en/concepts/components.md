@@ -1,7 +1,7 @@
 ---
 title: 'Components'
 description: 'Create your own @nuxt/content blog in seconds!'
-position: 2
+position: 4
 category: 'Configuration'
 ---
 The package comes with some global Vue.js components ready out of the box.
