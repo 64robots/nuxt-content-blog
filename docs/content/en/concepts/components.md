@@ -1,9 +1,10 @@
 ---
-title: 'Components'
-description: 'Create your own @nuxt/content blog in seconds!'
+title: "Components"
+description: "Create your own @nuxt/content blog in seconds!"
 position: 2
-category: 'Configuration'
+category: "Configuration"
 ---
+
 The package comes with some global Vue.js components ready out of the box.
 
 ### PostList
@@ -15,6 +16,7 @@ The `PostList` component is used to render a collection of posts. By default it 
   <DisplayPosts :posts="posts" />
 </PostList>
 ```
+
 You can also render a single category. Note that you also easily can handle errors or perform redirects by using the `redirect` prop.
 You will use the posts slot containing all the matched posts.
 
@@ -38,7 +40,30 @@ The `Post` component render a given post by using the `permalink` prop. Note tha
 The `post` and `author` slots are available to render the matched content
 
 ```vue
-<Post v-slot="{ post, author }" :permalink="$route.params.permalink" redirect="/">
+<Post
+  v-slot="{ post, author }"
+  :permalink="$route.params.permalink"
+  redirect="/"
+>
     <PostContent :post="post" :author="author" />
 </Post>
+```
+
+### AppHeader
+
+The `AppHeader` component is used in the `default` layout and accepts two named slots to customize the title and subtitle
+
+```vue
+<AppHeader>
+  <template #title>
+    <h1 class="text-2xl font-semibold leading-6 transition ease-in-out duration-300 hover:bg-blue-100 py-2 pl-1 pr-5 inline-block">
+      ✍️ Awesome Blog
+    </h1>
+  </template>
+  <template #subtitle>
+    <h2 class="text-xs text-gray-700 pl-1">
+      The awesome description of my awesome blog
+    </h2>
+  </template>
+</AppHeader>
 ```
