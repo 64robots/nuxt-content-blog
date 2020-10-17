@@ -11,6 +11,7 @@
     "@nuxt/types": "^2.14.4",
     "@nuxtjs/tailwindcss": "^3.0.2",
     "@tailwindcss/typography": "^0.2.0",
+    "date-fns": "^2.16.1",
     "defu": "^3.1.0",
     "hygen": "^5.0.3",
     "nuxt-i18n": "^6.13.12",

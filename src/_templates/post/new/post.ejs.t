@@ -7,6 +7,7 @@ description: '<%= description %>'
 image: <%= image %>
 author: <%= author %>
 category: <%= category %>
+createdAt: <%= new Date().toISOString() %>
 ---
 
 # This is a heading
