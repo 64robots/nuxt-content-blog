@@ -24,7 +24,7 @@ export default {
 
     try {
       const path = this.category ? `${this.collection}/${this.category}` : this.collection
-      const posts = await $content(path, { deep: this.fetchFilesFromSubdirectories }).fetch()
+      const posts = await $content(path, { deep: this.fetchFilesFromSubdirectories }).sortBy('createdAt', 'desc').fetch()
       this.posts = posts.map(p => {
         p.author = this.authors.find(author => author.slug === p.author) || {}
         return p
