@@ -67,19 +67,16 @@ export default {
 
   computed: {
     date() {
-      return this.post.createdAt
       return typeof this.post.createdAt === 'string'
         ? parseISO(this.post.createdAt)
         : this.post.createdAt
     },
 
     postDate() {
-      return this.date
       return format(this.date, 'MMM dd, yyyy')
     },
 
     dateTag() {
-      this.date
       return format(this.date, 'yyyy-MM-dd')
     },
   },
