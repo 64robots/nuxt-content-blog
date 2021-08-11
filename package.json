@@ -1,6 +1,6 @@
 {
   "name": "@64robots/nuxt-content-blog",
-  "version": "0.2.4",
+  "version": "0.2.6",
   "license": "MIT",
   "files": [
     "src"
