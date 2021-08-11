@@ -5,14 +5,21 @@ export default {
   name: 'PostList',
 
   props: {
+    language: {
+      type: String,
+      default: 'en',
+    },
+
     category: {
       type: String,
       default: null,
     },
+
     collection: {
       type: String,
       default: 'posts',
     },
+
     redirect: {
       type: String,
       default: null,
@@ -24,7 +31,7 @@ export default {
 
     try {
       const path = this.category ? `${this.collection}/${this.category}` : this.collection
-      const posts = await $content(path, { deep: this.fetchFilesFromSubdirectories }).sortBy('createdAt', 'desc').fetch()
+      const posts = await $content(path, { deep: this.fetchFilesFromSubdirectories }).where({ language: this.language }).sortBy('createdAt', 'desc').fetch()
       this.posts = posts.map(p => {
         p.author = this.authors.find(author => author.slug === p.author) || {}
         return p
