@@ -33,7 +33,16 @@ To get started quickly you can use the [create-nuxt-content-blog](https://github
   </code-block>
 </code-group>
 
-It will ask few questions about your project and install all the dependencies. The next step is to get into your project folder and launch it:
+It will ask few questions about your project and install all the dependencies.
+
+## Scaffolding
+This option will publish a ready to use blog layout with a predefined style, check it over here [nuxt-content-blog-demo](https://nuxt-content-blog-demo.netlify.app/)
+
+![image](https://user-images.githubusercontent.com/9825719/93459324-d601e580-f8e1-11ea-994e-566cdddf72a3.png)
+
+If you prefer to not use the provided scaffolding check out the [Pages section](concepts/pages)
+
+The next step is to get into your project folder and launch it:
 
 <code-group>
   <code-block label="Yarn" active>
