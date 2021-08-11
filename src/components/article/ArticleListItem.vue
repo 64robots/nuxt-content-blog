@@ -45,7 +45,7 @@
       </p>
     </div>
     <div class="px-6 flex justify-end">
-      <nuxt-link :to="`/${post.permalink}`" class="text-sm text-gray-800 hover:underline">
+      <nuxt-link :to="postUrl" class="text-sm text-gray-800 hover:underline">
         Read this article →
       </nuxt-link>
     </div>
@@ -63,6 +63,11 @@ export default {
       type: Object,
       default: () => ({}),
     },
+
+    useLangFolder: {
+      type: Boolean,
+      default: false
+    }
   },
 
   computed: {
@@ -79,6 +84,11 @@ export default {
     dateTag() {
       return format(this.date, 'yyyy-MM-dd')
     },
+
+    postUrl() {
+      const path = this.useLangFolder ? this.post.language : ''
+      return `${path}/${this.post.permalink}`
+    }
   },
 }
 </script>

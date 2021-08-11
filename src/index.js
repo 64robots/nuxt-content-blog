@@ -97,6 +97,10 @@ export default (userConfig) => {
           .replace(/^-*|-*$/g, '')
           .toLowerCase()
       }
+
+      if (!document.language) {
+        document.language = 'en'
+      }
     }
   }
 
