@@ -17,7 +17,7 @@
       >
         <div class="flex flex-col">
           <div class="flex items-start">
-            <nuxt-link :to="`/${post.permalink}`">
+            <nuxt-link :to="postUrl">
               <h3 class="text-2xl leading-5 font-semibold text-white">
                 {{ post.title }}
               </h3>
@@ -46,7 +46,7 @@
     </div>
     <div class="px-6 flex justify-end">
       <nuxt-link :to="postUrl" class="text-sm text-gray-800 hover:underline">
-        Read this article →
+        {{ readText }} →
       </nuxt-link>
     </div>
   </article>
@@ -88,6 +88,10 @@ export default {
     postUrl() {
       const path = this.useLangFolder ? this.post.language : ''
       return `${path}/${this.post.permalink}`
+    },
+
+    readText() {
+      return this.post.language === 'es' ? 'Leer Artículo' : 'Read this article'
     }
   },
 }
