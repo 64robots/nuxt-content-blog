@@ -2,7 +2,7 @@
   <article class="mb-3 h-full border-b-4 pb-2 border-black flex flex-col justify-between">
     <div>
       <!-- IMAGE -->
-      <nuxt-link :to="`/${post.permalink}`" class="flex-shrink-0">
+      <nuxt-link :to="postUrl" class="flex-shrink-0">
         <img
           class="h-48 w-full object-cover border-4 border-gray-900 border-b-8"
           :src="post.image"
